@@ -66,7 +66,7 @@ def get_user_input():
     """
     state = st.sidebar.selectbox("Select US State",("Massachusetts", "New Jersey", "Connecticut", "New York", "Rhode Island", "New Hampshire", "Vermont", "Maine", "Pennsylvania", "Delaware", "Virgin Islands", "Wyoming"))
     bed = st.sidebar.slider('bed', 1.0, 28.0, 3.0)
-    bath = st.sidebar.slider('bath', 1, 19.0, 2.0)
+    bath = st.sidebar.slider('bath', 1.0, 19.0, 2.0)
     acre_lot  = st.sidebar.slider('acre lot', 0.0, 13697.0, 1000)
     house_size  = st.sidebar.slider('house size', 249.0, 49658.0, 1000.0)
     
