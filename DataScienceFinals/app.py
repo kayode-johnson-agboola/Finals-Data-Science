@@ -23,7 +23,7 @@ def visualize_confidence_level(prediction_proba):
     return type : matplotlib bar chart  
     """
     data = (prediction_proba[0]*100).round(2)
-    grad_percentage = pd.DataFrame(data = data,columns = ['Percentage'],index = ['Low','Ave','High'])
+    grad_percentage = pd.DataFrame(data = data,columns = ['Percentage'],index = ['Average','Expensive','Very Expensive'])
     ax = grad_percentage.plot(kind='barh', figsize=(7, 4), color='#722f37', zorder=10, width=0.5)
     ax.legend().set_visible(False)
     ax.set_xlim(xmin=0, xmax=100)
@@ -40,7 +40,7 @@ def visualize_confidence_level(prediction_proba):
         ax.axvline(x=tick, linestyle='dashed', alpha=0.4, color='#eeeeee', zorder=1)
 
     ax.set_xlabel(" Percentage(%) Confidence Level", labelpad=2, weight='bold', size=12)
-    ax.set_ylabel("US State", labelpad=10, weight='bold', size=12)
+    ax.set_ylabel("Price Range", labelpad=10, weight='bold', size=12)
     ax.set_title('Prediction Confidence Level ', fontdict=None, loc='center', pad=None, weight='bold')
 
     st.pyplot()
@@ -48,10 +48,10 @@ def visualize_confidence_level(prediction_proba):
 
 st.write("""
 # House Price Prediction ML Web-App 
-This app predicts the ** Price of Housing **  using **house features** input via the **side panel** 
+This app predicts the "Price of Housing"  using *house features* input via the **side panel** 
 """)
 
-#read in wine image and render with streamlit
+#read in house image and render with streamlit
 image = Image.open('house.jpg')
 st.image(image, caption='House',use_column_width=True)
 
